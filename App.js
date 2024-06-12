@@ -1,10 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+
+  const [counter, setCounter] = useState(0);
+
+  const hundleOnpress = ()=>{
+      setCounter(counter+1)
+  }
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>counter {counter}</Text>
+      <Button title='Test button' onPress={hundleOnpress} />
       <StatusBar style="auto" />
     </View>
   );
